@@ -35,6 +35,5 @@ for file in ./*/ ; do
          echo "je garde "${dir##*/}
          rm -R ${dir##*/}
         fi
-a
   fi
 done
