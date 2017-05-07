@@ -1,6 +1,8 @@
 #!/bin/bash
+clear;
 periode=7
 foldername="tmp"
+now=''
 echo $periode $foldername
 #Se placer sur le bureau
 #tester si le repertoire $foldername existe
@@ -20,9 +22,11 @@ if [ ! -d $today ]; then
   echo "je creer $today"
 fi
 for file in ./* ; do
-  echo "--$file"
-  if [ -d $file ]; then
+
+  if [ -d "$file" ]; then
+    echo "$file est un dossier"
     dir=${file%*/}
+    if [[ $dir =~ [0-9]{4}\-[0-9]{2}\-[0-9]{2} ]]; then # echo 'cest une date';
     #on test si la date est + ou -
     folderdate='date -j -f %Y-%m-%d '${dir##*/}' +%Y%m%d'
     folderdate=$(eval $folderdate)
@@ -35,8 +39,20 @@ for file in ./* ; do
          echo "je garde "${dir##*/}
          rm -R ${dir##*/}
         fi
+      else
+             echo "$file est un dossier sans date";
+           if [[ $now == "" ]];  then
+             now=$(date +%s)
+             mkdir $now
+           fi
+          mv  "$file" ./$today/$now/
+
+       fi
   else
-    echo $file
-    mv $file ./$today/
+    if [[ $now == "" ]];  then
+      now=$(date +%s)
+      mkdir $now
+    fi
+    mv $file ./$today/$now/
   fi
 done
