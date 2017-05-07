@@ -19,8 +19,8 @@ if [ ! -d $today ]; then
   mkdir $today
   echo "je creer $today"
 fi
-for file in ./*/ ; do
-
+for file in ./* ; do
+  echo "--$file"
   if [ -d $file ]; then
     dir=${file%*/}
     #on test si la date est + ou -
@@ -35,5 +35,8 @@ for file in ./*/ ; do
          echo "je garde "${dir##*/}
          rm -R ${dir##*/}
         fi
+  else
+    echo $file
+    mv $file ./$today/
   fi
 done
