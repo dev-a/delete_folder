@@ -43,7 +43,7 @@ for file in ./* ; do
              echo "$file est un dossier sans date";
            if [[ $now == "" ]];  then
              now=$(date +%s)
-             mkdir $now
+             mkdir ./$today/$now
            fi
           mv  "$file" ./$today/$now/
 
@@ -51,7 +51,7 @@ for file in ./* ; do
   else
     if [[ $now == "" ]];  then
       now=$(date +%s)
-      mkdir $now
+      mkdir ./$today/$now
     fi
     mv $file ./$today/$now/
   fi
