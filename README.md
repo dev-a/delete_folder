@@ -10,8 +10,4 @@ Le script Ps1 est fonctionnel sur la version suivante
 
 PS C:\Users\>  $PSVersionTable.PSVersion
 
-Major  Minor  Build  Revision
-
-`-----  -----  -----  --------
-
-5      1      14393  1066
+Major: 5  Minor:1  Build:14393  Revision:1066
