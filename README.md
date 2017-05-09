@@ -1,8 +1,8 @@
 # delete_folder
-Ce Script crée un repertoire temporaire, (par défaut) tout élement de plus de 7 jours sera supprimé
+Ce Script crée un répertoire temporaire, (par défaut) tout élement de plus de 7 jours sera supprimé
 ## fonctionnement détaillé
-* Chaque jour le script creer un repertoire à la date du jour
-* si il existe des fichiers ou des répertoire à la racine ils seront déplacer dans le repertoire "date-du-jour/date-execution-du-script"
+* Chaque jour le script creer un répertoire à la date du jour
+* si il existe des fichiers ou des répertoire à la racine ils seront déplacer dans le répertoire "date-du-jour/date-execution-du-script"
 * Au bout de la periode définie (defaut 7 jour : $periode=7): le dossier de plus de 7 jours est supprimé 
 
 # pour ordonnancer le ps1 sous windows (10)
