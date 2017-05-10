@@ -50,6 +50,6 @@ for file in ./* ; do
 			  now=$(date +%s)
 			  mkdir ./$today/$now
 		fi
-	mv $file ./$today/$now/
+    mv "$file" "./$today/$now/"
 	fi
 done
