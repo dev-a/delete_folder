@@ -18,5 +18,5 @@ Planificateur de taches > "Démarrer un programme" > programme/script : powershe
 
 la version windows7.ps1 fonctionne sur windows7 avec powershell version
 
-Major:2  Minor:0  Build:-1  Revision:-1
+> Major:2  Minor:0  Build:-1  Revision:-1
 
