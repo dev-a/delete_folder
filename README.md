@@ -16,5 +16,7 @@ Major: 5  Minor:1  Build:14393  Revision:1066
 Planificateur de taches > "Démarrer un programme" > programme/script : powershell.exe > arguments : -ExecutionPolicy Bypass -file "C:\chemin\windows.ps1"
 
 
+la version windows7.ps1 fonctionne sur windows7 avec powershell version
 
+Major:2  Minor:0  Build:-1  Revision:-1
 
