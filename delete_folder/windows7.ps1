@@ -3,19 +3,19 @@ $periode=7
 $foldername="tmp"
 #Se placer sur le bureau
 #tester si le repertoire $foldername existe 
-#sinon on le crÈe
+#sinon on le cr√©e
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
 cd $DesktopPath
 if(!(Test-Path -Path $foldername )){
     New-Item -ItemType directory -Path $foldername
 }
 
-#on se place dans le rÈpertoire $foldername
+#on se place dans le r√©pertoire $foldername
 #on verifie si il existe un repertoire pour aujourd'hui
-#sinon on le crÈe
+#sinon on le cr√©e
 cd $foldername
 $today = date -format yyyy-MM-dd
-$working_folder = Get-Date ñformat ëyyyy-mm-dd_HH-mm-ssí
+$working_folder = Get-Date ‚Äìformat ‚Äòyyyy-mm-dd_HH-mm-ss‚Äô
 if(!(Test-Path -Path $today )){
     New-Item -ItemType directory -Path $today
 }
@@ -27,9 +27,9 @@ $table = Get-ChildItem
 foreach($folder in $table){
 	if((Get-Item $folder) -is [System.IO.DirectoryInfo])
 	{
-	#on teste si le dossier corresponds ‡ un repertoire de date sinon on le deplace
+	#on teste si le dossier corresponds √† un repertoire de date sinon on le deplace
 	if($folder.Name.ToString() -match "[0-9]{4}\-[0-9]{2}\-[0-9]{2}"){
-		$folderdate=([datetime]::ParseExact($folder.Name.ToString(),îyyyy-MM-ddî,$null))
+		$folderdate=([datetime]::ParseExact($folder.Name.ToString(),‚Äùyyyy-MM-dd‚Äù,$null))
 		$suppressdate=Get-Date (get-date).addDays(-$periode)
 		if($folderdate -lt $suppressdate)
 		{
