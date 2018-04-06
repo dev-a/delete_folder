@@ -14,7 +14,7 @@ if(!(Test-Path -Path $foldername )){
 #on verifie si il existe un repertoire pour aujourd'hui
 #sinon on le crée
 cd $foldername
-$today = date -format yyyy-MM-dd
+$today = Get-Date -format yyyy-MM-dd
 $working_folder = Get-Date –format ‘yyyy-mm-dd_HH-mm-ss’
 if(!(Test-Path -Path $today )){
     New-Item -ItemType directory -Path $today
