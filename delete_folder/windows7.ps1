@@ -35,6 +35,14 @@ foreach($folder in $table){
 		{
 		 Remove-Item -Recurse -Force $folder.Name
 		}
+		
+		#Nouveau on supprime les dossiers vides créé par plantage qui ne servent a rien 	
+		if((Get-Item $folder) -is [System.IO.DirectoryInfo])
+		{
+		Get-ChildItem $folder | where {$_.mode -like 'd*' } | where { @(gci $_.Fullname).count -eq 0} | remove-item
+		echo $folder
+		}
+	
 	}else{
 	if(!(Test-Path -Path $today/$working_folder )){
 		New-Item -ItemType directory -Path $today/$working_folder
